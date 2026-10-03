@@ -41,8 +41,8 @@ jobs:
           cf target -o "$ORG"
           SPACE=$(cf spaces | awk 'NR>3 {print $1; exit}')
           if [ -z "$SPACE" ]; then
-            cf create-space dev
-            SPACE="dev"
+            cf create-space test
+            SPACE="test"
           fi
           cf target -o "$ORG" -s "$SPACE"
 
